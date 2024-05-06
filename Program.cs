@@ -47,7 +47,7 @@
                 if (pass[n].username == username && pass[n].password == password)
                 {
                     Console.WriteLine("Success " + type);
-                    break;
+                    break; //ha megtalálta, akkorne fusson tovább feleslegesen
                 }
                 n++;
             }
@@ -61,22 +61,25 @@
             Console.Write("Username: ");
             string username = Console.ReadLine();
             Console.Write("Password: ");
-            string passoword = Console.ReadLine();
+            string password = Console.ReadLine();
 
-            Load(username, passoword, "admin");
+            Load(username, password, "admin");
+
+            Admin admin = new Admin(username, password);
+            admin.DashBoard();
         }
 
         static void StudentLogin()
         {
             Console.Clear();
-            Console.WriteLine("ADMIN LOGIN");
+            Console.WriteLine("STUDENT LOGIN");
 
             Console.Write("Username: ");
             string username = Console.ReadLine();
             Console.Write("Password: ");
-            string passoword = Console.ReadLine();
+            string password = Console.ReadLine();
 
-            Load(username, passoword, "student");
+            Load(username, password, "student");
         }
     }
 }
