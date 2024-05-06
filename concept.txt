@@ -3,7 +3,7 @@ Has account -> login
 ! -> registration && login
 
 
-Admin-------
+Class Admin-------
 * dashboard
   - book add/remove
   - book issuing manual
@@ -12,13 +12,15 @@ Admin-------
 * book view
   - books available
 
-Student-----
+Class Student-----
 * book view
   - books available
   - book issuing
   - book returning
 
 DATA STORAGE/TABLES
+Interface : DataFormatter
+
 
 BOOK---
 book id|title|author|rl. date|price|quant. avail.
@@ -27,7 +29,10 @@ BOOK ISSUE---
 iss. id|std. id|std. name|std. no|iss. date|ret. date
 
 STUDENT---
-std. id|std. name|std. no|password|std. bdate.|contact
+std. id|std. name|std. email|std. no|password|std. bdate.|contact
 
 ADMIN---
 admin id|admin name|password
+
+LOGIN TXT
+name password
