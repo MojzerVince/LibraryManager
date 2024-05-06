@@ -32,7 +32,7 @@ STUDENT---
 std. id|std. name|std. email|std. no|password|std. bdate.|contact
 
 ADMIN---
-admin id|admin name|password
+admin name|password
 
 LOGIN TXT
 name password
