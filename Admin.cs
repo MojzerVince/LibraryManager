@@ -35,9 +35,17 @@ namespace LibraryManager
                     break;
                 case ConsoleKey.NumPad1:
                 case ConsoleKey.D1:
-                    //Könyvlista betöltése
+                    BookList();
                     break;
             }
+        }
+
+        private void BookList()
+        {
+            Console.Clear();
+            Console.WriteLine("Book List");
+            BookLoad();
+            Console.WriteLine("Options: Add book(1) Remove book(2)");
         }
     }
 }
