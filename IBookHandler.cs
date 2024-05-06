@@ -8,6 +8,7 @@ namespace LibraryManager
 {
     internal class IBookHandler
     {
+        List<Book> books = new List<Book>();
 
         public void BookLoad()
         {
@@ -18,9 +19,15 @@ namespace LibraryManager
                 string[] data = sr.ReadLine().Split("|");
                 for (int i = 0; i < data.Length; i++)
                 {
-                    Console.Write($"{data[i++]}|{data[i++]}|{data[i++]}|{data[i++]}|{data[i++]}|{data[i++]}\n");
+                    //Console.Write($"{data[i++]}|{data[i++]}|{data[i++]}|{data[i++]}|{data[i++]}|{data[i++]}\n");
+                    Book b = new Book(int.Parse(data[i++]), data[i++], data[i++], data[i++], int.Parse(data[i++]), byte.Parse(data[i++]));
+                    books.Add(b);
                 }
             }
+            sr.Close();
+            Console.WriteLine("-------");
+            //Console.OutputEncoding = Encoding.ASCII;
+            foreach (Book b in books) Console.WriteLine(b.ToString());
         }
 
         protected void AddEntry()

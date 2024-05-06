@@ -31,5 +31,10 @@ namespace LibraryManager
             Price = price;
             Quant_avail = quant_avail;
         }
+
+        public override string ToString()
+        {
+            return $"{book_id}|{title}|{author}|{rl_date}|{price}|{quant_avail}";
+        }
     }
 }
