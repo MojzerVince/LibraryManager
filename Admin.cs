@@ -46,6 +46,18 @@ namespace LibraryManager
             Console.WriteLine("Book List");
             BookLoad();
             Console.WriteLine("Options: Add book(1) Remove book(2)");
+            ConsoleKeyInfo key = Console.ReadKey(true);
+            switch (key.Key)
+            {
+                case ConsoleKey.NumPad1:
+                case ConsoleKey.D1:
+                    AddEntry();
+                    break;
+                case ConsoleKey.NumPad2:
+                case ConsoleKey.D2:
+                    RemoveEntry();
+                    break;
+            }
         }
     }
 }
