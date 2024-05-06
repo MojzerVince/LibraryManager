@@ -14,14 +14,13 @@
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World! \n");
-            Console.WriteLine("Admin(1)/Student(2) Login: ");
+            Console.Write("Admin(1)/Student(2) Login: ");
 
             ConsoleKeyInfo key = Console.ReadKey(true);
             switch (key.Key)
             {
                 case ConsoleKey.NumPad1:
                 case ConsoleKey.D1:
-                    //Admin admin = new Admin();
                     AdminLogin();
                     break;
                 case ConsoleKey.NumPad2:
