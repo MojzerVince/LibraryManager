@@ -43,7 +43,7 @@ namespace LibraryManager
 
         static void Load(string username, string password, string type)
         {
-            StreamReader sr = new StreamReader(type+"logins.txt");
+            StreamReader sr = new StreamReader("Data/"+type+"logins.txt");
 
             while(!sr.EndOfStream)
             {
@@ -106,7 +106,7 @@ namespace LibraryManager
             Console.Clear();
             Console.WriteLine("STUDENT REGISTRATION");
 
-            StreamWriter sw = new StreamWriter("studentlogins.txt", true); //append
+            StreamWriter sw = new StreamWriter("Data/studentlogins.txt", true); //append
 
             Console.Write("Student name: ");
             string name = Console.ReadLine();
@@ -125,7 +125,7 @@ namespace LibraryManager
             sw.Close();
 
             //-- automata id hozzárendelés
-            StreamReader sr = new StreamReader("students.txt");
+            StreamReader sr = new StreamReader("Data/students.txt");
             string line = "";
             //ha van már sor, akkor megnézi a legutolsót és annak az id-jához ad plusz 1-et
             while (!sr.EndOfStream) line = sr.ReadLine();

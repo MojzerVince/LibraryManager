@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryManager
+namespace LibraryManager.Interface
 {
     internal class IBookHandler
     {
@@ -12,7 +12,7 @@ namespace LibraryManager
 
         public void BookLoad()
         {
-            StreamReader sr = new StreamReader("books.txt");
+            StreamReader sr = new StreamReader("Data/books.txt");
             sr.ReadLine(); //kihagyja az 1. sort, amiben csak a format van
             while (!sr.EndOfStream)
             {

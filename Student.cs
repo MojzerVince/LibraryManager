@@ -34,7 +34,7 @@ namespace LibraryManager
             Std_bdate = std_bdate;
             Contact = contact;
 
-            StreamWriter sw = new StreamWriter("students.txt", true);
+            StreamWriter sw = new StreamWriter("Data/students.txt", true);
             sw.WriteLine($"{std_id}|{std_name}|{std_email}|{std_no}|{password}|{std_bdate}|{contact}\n");
             sw.Close();
         }
