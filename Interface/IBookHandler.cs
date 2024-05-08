@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleTables; //Konzolra való egyszerűbb kiíratás érdekében
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManager.Interface
 {
-    internal class IBookHandler
+    internal class IBookHandler : ConsoleTable
     {
         List<Book> books = new List<Book>();
 
@@ -27,7 +28,14 @@ namespace LibraryManager.Interface
             sr.Close();
             Console.WriteLine("-------");
             //Console.OutputEncoding = Encoding.ASCII;
-            foreach (Book b in books) Console.WriteLine(b.ToString());
+            //foreach (Book b in books) Console.WriteLine(b.ToString());
+
+            //táblázat létrehozása oszlopokkal
+            var table = new ConsoleTable("ID", "Title", "Author", "Release Date", "Price", "Quantity Available")
+                .Configure(o => o.EnableCount = false); //Kikapcsolja a Count-ot a kiíratás végéről
+            //sorok hozzáadása a táblázathoz
+            foreach (Book b in books) table.AddRow(b.Book_id, b.Title, b.Author, b.Rl_date, b.Price, b.Quant_avail);
+            Console.WriteLine(table.ToString()); //táblázat megjelenítése
         }
 
         protected void AddEntry()
