@@ -14,7 +14,7 @@ namespace LibraryManager.Interface
         public void BookLoad()
         {
             StreamReader sr = new StreamReader("Data/books.txt");
-            sr.ReadLine(); //kihagyja az 1. sort, amiben csak a format van
+            books.Clear(); //törli az eddigi bejegyzéseket, különben duplikálódnak
             while (!sr.EndOfStream)
             {
                 string[] data = sr.ReadLine().Split("|");
@@ -40,8 +40,11 @@ namespace LibraryManager.Interface
 
         protected void AddBook()
         {
-            Console.Clear();
+            Console.WriteLine();
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("BOOK REGISTRATION");
+            Console.ResetColor();
 
             Console.Write("Book title: ");
             string title = Console.ReadLine();
@@ -79,7 +82,11 @@ namespace LibraryManager.Interface
 
         private void ListUpdater()
         {
-
+            StreamWriter sw = new StreamWriter("Data/books.txt", false);
+            foreach (Book book in books)
+                sw.WriteLine($"{book.Book_id}|{book.Title}|{book.Author}|{book.Rl_date}|{book.Price}|{book.Quant_avail}");
+            sw.Close();
+            Console.WriteLine("Book list has been updated");
         }
     }
 }
