@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManager.Interface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManager
 {
-    internal class Student
+    internal class Student : IBookHandler
     {
         private int std_id;
         private string std_name;
@@ -37,6 +38,40 @@ namespace LibraryManager
             StreamWriter sw = new StreamWriter("Data/students.txt", true);
             sw.Write($"{std_id}|{std_name}|{std_email}|{std_no}|{password}|{std_bdate}|{contact}\n");
             sw.Close();
+        }
+
+        public void BookList()
+        {
+            Console.Clear();
+            Console.WriteLine($"Welcome back, {Std_name}!");
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("Book List");
+            Console.ResetColor();
+            BookLoad();
+            Console.WriteLine("Options: Issue book(1) Return book(2)");
+            ConsoleKeyInfo key = Console.ReadKey(true);
+            switch (key.Key)
+            {
+                case ConsoleKey.NumPad1:
+                case ConsoleKey.D1:
+                    IssueBook();
+                    break;
+                case ConsoleKey.NumPad2:
+                case ConsoleKey.D2:
+                    ReturnBook();
+                    break;
+            }
+        }
+
+        private void IssueBook()
+        {
+
+        }
+
+        private void ReturnBook()
+        {
+
         }
     }
 }
