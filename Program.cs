@@ -6,12 +6,13 @@ namespace LibraryManager
     {
         public string username;
         public string password;
+        public int id;
     }
 
     internal class Program
     {
         static int n = 0;
-        static Pass[] pass = new Pass[10];
+        static Pass[] pass = new Pass[50];
         static List<Student> students = new List<Student>();
 
         static void Main(string[] args)
@@ -31,7 +32,7 @@ namespace LibraryManager
                     Console.Write("Student profile registration(1) | Student login(2) ");
                     string opt = Console.ReadLine();
                     if (opt == "1") StudentReg();
-                    else if (opt == "2") StudentLogin();
+                    else if (opt == "2") StudentLogin(null);
                     else Console.WriteLine("An unexpected error occured!"); //leszarom a kivételkezelést
                     break;
                 default:
@@ -41,7 +42,7 @@ namespace LibraryManager
             }
         }
 
-        static void Load(string username, string password, string type)
+        static void Load(string username, string password, string type, Student std=null)
         {
             StreamReader sr = new StreamReader("Data/"+type+"logins.txt");
 
@@ -52,6 +53,7 @@ namespace LibraryManager
 
                 pass[n].username = data[0];
                 pass[n].password = data[1];
+                pass[n].id = int.Parse(data[2]);
 
                 if (pass[n].username == username && pass[n].password == password)
                 {
@@ -66,7 +68,22 @@ namespace LibraryManager
                     }
                     else if(type == "student")
                     {
-                        //idk
+                        if(std != null)
+                            std.BookList();
+                        else if(std == null)
+                        {
+                            string line2 = "999999999"; //kell ide ez a nagy szám, mert anélkül a Substring hibát dob, meg nem tud rendesen összehasonlítani
+                            StreamReader sr2 = new StreamReader("Data/students.txt");
+                            //addig megy amíg meg nem találja az id-hoz tartozó adatokat
+                            while (pass[n].id != int.Parse(line2.Substring(0,1)))
+                                line2 = sr2.ReadLine(); //elmenti hogy később tudjuk Substringelni
+                            sr2.Close();
+                            string[] data2 = line2.Split("|"); //adatfeldolgozás
+                            
+                            //Student példányosítás
+                            Student std2 = new Student(int.Parse(data2[0]), data2[1], data2[2], data2[3], data2[4], data2[5], data2[6]);
+                            std2.BookList();
+                        }
                     }
                     break; //ha megtalálta, akkorne fusson tovább feleslegesen
                 }
@@ -88,7 +105,7 @@ namespace LibraryManager
             Load(username, password, "admin");
         }
 
-        static void StudentLogin()
+        static void StudentLogin(Student std) //kéri paraméterként az std-t, hogy tovább tudja adni a Load()-ba
         {
             Console.Clear();
             Console.WriteLine("STUDENT LOGIN");
@@ -98,7 +115,7 @@ namespace LibraryManager
             Console.Write("Password: ");
             string password = Console.ReadLine();
 
-            Load(username, password, "student");
+            Load(username, password, "student", std);
         }
 
         static void StudentReg()
@@ -117,12 +134,11 @@ namespace LibraryManager
             string email = Console.ReadLine();
             Console.Write("Account password: ");
             string password = Console.ReadLine();
-            sw.Write(password);
+            sw.Write(password + "|");
             Console.Write("Student birth date (yyyy-mm-dd): ");
             string bdate = Console.ReadLine();
             Console.Write("Student contact: ");
             string contact = Console.ReadLine();
-            sw.Close();
 
             //-- automata id hozzárendelés
             StreamReader sr = new StreamReader("Data/students.txt");
@@ -136,11 +152,13 @@ namespace LibraryManager
             //ha már van sor, akkor kiszedő az utolsóból az id-t és hozzáad 1-et
             if (line != "") id = int.Parse(line.Substring(0, line.IndexOf("|")))+1;
             else id = 0; //ha nincs még sor, akkor automatán 0 lesz az id
+            sw.Write(id);
+            sw.Close();
 
             //Student példányosítás
             Student std = new Student(id, name, email, number, password, bdate, contact);
             students.Add(std); //példány hozzáadás a tanulókat tartalmazó listába
-            StudentLogin(); //regisztráció utáni bejelentkeztetés
+            StudentLogin(std); //regisztráció utáni bejelentkeztetés
         }
     }
 }
