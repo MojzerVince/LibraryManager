@@ -62,7 +62,7 @@ namespace LibraryManager
             {
                 case ConsoleKey.NumPad1:
                 case ConsoleKey.D1:
-                    AddEntry();
+                    AddBook();
                     break;
                 case ConsoleKey.NumPad2:
                 case ConsoleKey.D2:

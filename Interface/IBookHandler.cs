@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace LibraryManager.Interface
 {
-    internal class IBookHandler : ConsoleTable
+    internal class IBookHandler
     {
-        List<Book> books = new List<Book>();
+        static List<Book> books = new List<Book>();
 
         public void BookLoad()
         {
@@ -38,12 +38,46 @@ namespace LibraryManager.Interface
             Console.WriteLine(table.ToString()); //táblázat megjelenítése
         }
 
-        protected void AddEntry()
+        protected void AddBook()
+        {
+            Console.Clear();
+            Console.WriteLine("BOOK REGISTRATION");
+
+            Console.Write("Book title: ");
+            string title = Console.ReadLine();
+            Console.Write("Book author: ");
+            string author = Console.ReadLine();
+            Console.Write("Release date (yyyy): ");
+            string release = Console.ReadLine();
+            Console.Write("Price: ");
+            string price = Console.ReadLine();
+            Console.Write("Quantity available: ");
+            string quantity = Console.ReadLine();
+
+            //-- automata id hozzárendelés
+            StreamReader sr = new StreamReader("Data/books.txt");
+            string line = "";
+            //ha van már sor, akkor megnézi a legutolsót és annak az id-jához ad plusz 1-et
+            while (!sr.EndOfStream) line = sr.ReadLine();
+            //else line = ""; //ha nincs, akkor legyen az első sor üres, ez később if-ben hasznos
+            sr.Close();
+            int id;
+            //ha már van sor, akkor kiszedő az utolsóból az id-t és hozzáad 1-et
+            if (line != "") id = int.Parse(line.Substring(0, line.IndexOf("|"))) + 1;
+            else id = 0; //ha nincs még sor, akkor automatán 0 lesz az id
+
+            //Book példányosítás
+            Book book = new Book(id, title, author, release, int.Parse(price), byte.Parse(quantity));
+            books.Add(book); //példány hozzáadás a tanulókat tartalmazó listába
+            ListUpdater();
+        }
+
+        protected void RemoveEntry()
         {
 
         }
 
-        protected void RemoveEntry()
+        private void ListUpdater()
         {
 
         }
