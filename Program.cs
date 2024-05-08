@@ -13,7 +13,7 @@ namespace LibraryManager
     {
         static int n = 0;
         static Pass[] pass = new Pass[50];
-        static List<Student> students = new List<Student>();
+        //static List<Student> students = new List<Student>();
 
         static void Main(string[] args)
         {
@@ -146,7 +146,6 @@ namespace LibraryManager
             //ha van már sor, akkor megnézi a legutolsót és annak az id-jához ad plusz 1-et
             while (!sr.EndOfStream) line = sr.ReadLine();
             //else line = ""; //ha nincs, akkor legyen az első sor üres, ez később if-ben hasznos
-            Console.WriteLine("sor: " + line);
             sr.Close();
             int id;
             //ha már van sor, akkor kiszedő az utolsóból az id-t és hozzáad 1-et
@@ -157,7 +156,7 @@ namespace LibraryManager
 
             //Student példányosítás
             Student std = new Student(id, name, email, number, password, bdate, contact);
-            students.Add(std); //példány hozzáadás a tanulókat tartalmazó listába
+            //students.Add(std); //példány hozzáadás a tanulókat tartalmazó listába
             StudentLogin(std); //regisztráció utáni bejelentkeztetés
         }
     }
