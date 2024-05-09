@@ -1,0 +1,36 @@
+*{
+    color: white;
+    font-family: 'Poppins';
+}
+p{
+    padding: 0px;
+    margin: 0px;
+}
+
+.container{
+    background-color: rgb(10, 10, 71);
+    border-radius: 15px;
+    width: 900px;
+    height: 900px;
+
+    display: grid;
+    grid-template-columns: 300px 600px;
+    grid-template-rows: 30px 870px;
+    grid-template-areas: 
+    "header header header"
+    "navbar content content";
+}
+.header{
+    background-color: rgb(24, 24, 88);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+    grid-area: header;
+    text-align: center;
+
+    width: 900px;
+}
+header{
+    padding-top: 5px;
+    font-size: 16px;
+}
