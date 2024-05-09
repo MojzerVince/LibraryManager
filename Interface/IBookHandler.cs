@@ -38,6 +38,26 @@ namespace LibraryManager.Interface
             Console.WriteLine(table.ToString()); //táblázat megjelenítése
         }
 
+        protected void Issue(int id)
+        {
+            string line = "99999999";
+            StreamReader sr = new StreamReader("Data/books.txt");
+            while(int.Parse(line) != id)
+            {
+                line = sr.ReadLine();
+            }
+            if (int.Parse(line.Substring(-1)) <= 0)
+            {
+                Console.WriteLine("Please try later, the book is not available now!");
+                BookLoad();
+            }
+            else
+            {
+                string[] book = line.Split("|");
+
+            }
+        }
+
         protected void AddBook()
         {
             Console.WriteLine();

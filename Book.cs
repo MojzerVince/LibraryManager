@@ -32,6 +32,11 @@ namespace LibraryManager
             Quant_avail = quant_avail;
         }
 
+        ~Book()
+        {
+            Console.WriteLine("Destruct");
+        }
+
         public override string ToString()
         {
             return $"{book_id}|{title}|{author}|{rl_date}|{price}|{quant_avail}";

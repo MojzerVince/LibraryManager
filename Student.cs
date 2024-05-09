@@ -66,7 +66,9 @@ namespace LibraryManager
 
         private void IssueBook()
         {
-
+            Console.WriteLine("Please enter the ID of the book you want to issue! ");
+            int id = int.Parse(Console.ReadLine());
+            Issue(id);
         }
 
         private void ReturnBook()
