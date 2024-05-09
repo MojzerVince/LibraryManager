@@ -11,11 +11,11 @@ p{
     background-color: #171717;
     border-radius: 15px;
     width: 900px;
-    height: 900px;
+    height: 700px;
 
     display: grid;
     grid-template-columns: 300px 600px;
-    grid-template-rows: 30px 870px;
+    grid-template-rows: 30px 670px;
     grid-template-areas: 
     "header header header"
     "navbar content content";
@@ -24,7 +24,7 @@ p{
 .ad_logged{
     display: none;
     grid-template-columns: 300px 600px;
-    grid-template-rows: 870px;
+    grid-template-rows: 670px;
     grid-template-areas: 
     "navbar content content";
 }
