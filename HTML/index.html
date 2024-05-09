@@ -9,7 +9,71 @@
 </head>
 
 <body>
-    
+    <div class="container">
+        <div class="header">
+            <header>Library Manager</header>
+        </div>
+        <div class="login">
+            <div>
+                <h2>Login</h2>
+                <form id="login_form">
+                    <input type="radio" name="admin" id="ad_login">
+                    <label for="ad_login">Admin</label>
+                    <input type="radio" name="student" id="std_login">
+                    <label for="std_login">Student</label>
+                    <br>
+                    <input type="text" name="username" id="username" placeholder="Username">
+                    <br>
+                    <input type="password" name="password" id="password" placeholder="Password">
+                    <br>
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+        </div>
+        <div class="ad_logged">
+            <div class="ad_navbar">
+                <div class="ad_profile">
+                    <p>Profile</p>
+                </div>
+                <div class="ad_books">
+                    <p>Books</p>
+                </div>
+                <div class="ad_students">
+                    <p>Students</p>
+                </div>
+            </div>
+            <div class="ad_content">
+                <div id="ad_profile">
+
+                </div>
+                <div id="ad_books">
+
+                </div>
+                <div id="ad_students">
+
+                </div>
+            </div>
+        </div>
+        <div class="std_logged">
+            <div class="ad_navbar">
+                <div class="std_profile">
+                    <p>Profile</p>
+                </div>
+                <div class="std_books">
+                    <p>Books</p>
+                </div>
+            </div>
+            <div class="std_content">
+                <div id="std_profile">
+
+                </div>
+                <div id="std_books">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="main.js"></script>
 </body>
 
