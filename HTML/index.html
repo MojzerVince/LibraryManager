@@ -20,13 +20,17 @@
             <header>Library Manager</header>
         </div>
         <div class="login">
-            <div>
+            <div class="box">
                 <h2>Login</h2>
                 <form id="login_form">
-                    <input type="radio" name="admin" id="ad_login">
+                    <!--<input type="radio" name="type" id="ad_login">
                     <label for="ad_login">Admin</label>
-                    <input type="radio" name="student" id="std_login">
-                    <label for="std_login">Student</label>
+                    <input type="radio" name="type" id="std_login">
+                    <label for="std_login">Student</label>-->
+                    <select name="type" id="type_login">
+                        <option value="admin">Admin</option>
+                        <option value="student">Student</option>
+                    </select>
                     <br>
                     <input type="text" name="username" id="username" placeholder="Username">
                     <br>

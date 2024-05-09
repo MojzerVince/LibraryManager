@@ -8,7 +8,7 @@ p{
 }
 
 .container{
-    background-color: rgb(10, 10, 71);
+    background-color: #171717;
     border-radius: 15px;
     width: 900px;
     height: 900px;
@@ -20,8 +20,54 @@ p{
     "header header header"
     "navbar content content";
 }
+
+.ad_logged{
+    display: none;
+    grid-template-columns: 300px 600px;
+    grid-template-rows: 870px;
+    grid-template-areas: 
+    "navbar content content";
+}
+
+.std_logged{
+    display: none;
+    grid-template-columns: 300px 600px;
+    grid-template-rows: 870px;
+    grid-template-areas: 
+    "navbar content content";
+}
+
+.login{
+    display: block;
+    grid-area: content;
+}
+.login>.box{
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    font-size: 18px;
+}
+#login_form>select{
+    background-color: #282828;
+    color: white;
+}
+#login_form>input{
+    margin-top: 5px;
+    font-size: 17px;
+    border-radius: 10px;
+    color: black;
+}
+#login_form>input[type="submit"]{
+    background-color: rgb(62, 62, 88);
+    color: white;
+    width: 130px;
+    height: 30px;
+    border-radius: 20px;
+    border: 1px black solid;
+}
+
 .header{
-    background-color: rgb(24, 24, 88);
+    background-color: #282828;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 
