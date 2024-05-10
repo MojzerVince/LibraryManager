@@ -20,6 +20,12 @@ p{
     "header header header"
     "navbar content content";
 }
+.pfp{
+    width: 40px;
+    height: 40px;
+    color: white;
+    margin-bottom: -10px;
+}
 
 .ad_logged{
     display: none;
@@ -27,6 +33,30 @@ p{
     grid-template-rows: 670px;
     grid-template-areas: 
     "navbar content content";
+}
+.ad_navbar{
+    grid-area: navbar;
+    background-color: #282828;
+    border-bottom-left-radius: 15px;
+}
+.ad_profile{
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    font-size: 18px;
+}
+.ad_books, .ad_students{
+    width: 300px;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: 0.2s linear;
+}
+.ad_books:hover, .ad_students:hover{
+    font-size: 22px;
+    background-color: #484848;
+    transition: 0.5s ease-in-out;
 }
 
 .std_logged{
