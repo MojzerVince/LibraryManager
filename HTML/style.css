@@ -6,6 +6,7 @@
 p{
     padding: 0px;
     margin: 0px;
+    display: inline-block;
 }
 
 .container{
@@ -26,6 +27,11 @@ p{
     height: 40px;
     color: white;
     margin-bottom: -10px;
+}
+.log_out_i{
+    width: 15px;
+    height: 15px;
+    display: inline-block;
 }
 
 .ad_logged{
@@ -65,6 +71,12 @@ p{
 #ad_books, #ad_students{
     display: none;
 }
+.ad_log_out{
+    width: 300px;
+    height: 50px;
+    margin-top: 320px;
+    text-align: center;
+}
 
 .std_logged{
     display: none;
@@ -97,6 +109,12 @@ p{
 }
 #std_books{
     display: none;
+}
+.std_log_out{
+    width: 300px;
+    height: 50px;
+    margin-top: 360px;
+    text-align: center;
 }
 
 .login{

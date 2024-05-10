@@ -4,8 +4,6 @@ let admin = document.querySelector(".ad_logged");
 let student = document.querySelector(".std_logged");
 
 form.addEventListener("submit", function (event) {
-
-
     let formData = new FormData(form);
     if (formData.get("password") != "") {
         event.preventDefault();
@@ -48,4 +46,10 @@ function Students() {
 function Books_std() {
     let std_books = document.querySelector("#std_books");
     std_books.style = "display: block;";
+}
+
+function LogOut(){
+    loginClass.style = "display: block;";
+    admin.style = "display: none;";
+    student.style = "display: none;";
 }
