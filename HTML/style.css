@@ -45,7 +45,7 @@ p{
     text-align: center;
     font-size: 18px;
 }
-.ad_books, .ad_students{
+.ad_books_div, .ad_students_div{
     width: 300px;
     text-align: center;
     font-size: 20px;
@@ -53,10 +53,16 @@ p{
     padding-bottom: 10px;
     transition: 0.2s linear;
 }
-.ad_books:hover, .ad_students:hover{
+.ad_books_div:hover, .ad_students_div:hover{
     font-size: 22px;
     background-color: #484848;
     transition: 0.5s ease-in-out;
+}
+.ad_content{
+    display: none;
+}
+#ad_books, #ad_students{
+    display: none;
 }
 
 .std_logged{

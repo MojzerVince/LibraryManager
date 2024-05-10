@@ -17,6 +17,9 @@ form.addEventListener("submit", function (event) {
 
             let ad_user = document.querySelector("#ad_user");
             ad_user.innerHTML = formData.get("username");
+
+            let ad_content = document.querySelector(".ad_content");
+            ad_content.style = "display: block;";
         }
         else {
             student.style = "display: grid;";
@@ -25,6 +28,13 @@ form.addEventListener("submit", function (event) {
     else alert("Please enter password!");
 })
 
-function Books(){
-    
+let ad_books = document.querySelector("#ad_books");
+let ad_students = document.querySelector("#ad_students");
+function Books() {
+    ad_books.style = "display: block;";
+    ad_students.style = "display: none;";
+}
+function Students() {
+    ad_books.style = "display: none;";
+    ad_students.style = "display: block;";
 }
