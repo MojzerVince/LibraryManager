@@ -47,7 +47,7 @@
                     <h3 id="ad_user">username</h3>
                     <p>Logged in as: <b>admin</b></p>
                 </div>
-                <div class="ad_books_div" onclick="Books()">
+                <div class="ad_books_div" onclick="Books_admin()">
                     <p>Books</p>
                 </div>
                 <div class="ad_students_div" onclick="Students()">
@@ -66,18 +66,17 @@
         <div class="std_logged">
             <div class="ad_navbar">
                 <div class="std_profile">
-                    <p>Profile</p>
+                    <img src="assets/user.png" alt="Profile Icon" class="pfp">
+                    <h3 id="std_user">username</h3>
+                    <p>Logged in as: <b>student</b></p>
                 </div>
-                <div class="std_books">
+                <div class="std_books_div" onclick="Books_std()">
                     <p>Books</p>
                 </div>
             </div>
             <div class="std_content">
-                <div id="std_profile">
-
-                </div>
                 <div id="std_books">
-
+                    Books
                 </div>
             </div>
         </div>

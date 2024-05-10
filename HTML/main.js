@@ -23,6 +23,12 @@ form.addEventListener("submit", function (event) {
         }
         else {
             student.style = "display: grid;";
+
+            let std_user = document.querySelector("#std_user");
+            std_user.innerHTML = formData.get("username");
+
+            let std_content = document.querySelector(".std_content");
+            std_content.style = "display: block;";
         }
     }
     else alert("Please enter password!");
@@ -30,11 +36,16 @@ form.addEventListener("submit", function (event) {
 
 let ad_books = document.querySelector("#ad_books");
 let ad_students = document.querySelector("#ad_students");
-function Books() {
+function Books_admin() {
     ad_books.style = "display: block;";
     ad_students.style = "display: none;";
 }
 function Students() {
     ad_books.style = "display: none;";
     ad_students.style = "display: block;";
+}
+
+function Books_std() {
+    let std_books = document.querySelector("#std_books");
+    std_books.style = "display: block;";
 }
