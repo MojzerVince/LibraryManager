@@ -48,7 +48,7 @@ const bookList = [
         quant_avail: 3,
     },
 ];
-
+console.table(bookList);
 
 const form = document.querySelector("#login_form");
 let loginClass = document.querySelector(".login");
