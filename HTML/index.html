@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Manager</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <header>Library Manager</header>
+        </div>
+        <div class="login">
+            <div class="box">
+                <h2>Login</h2>
+                <form id="login_form">
+                    <!--<input type="radio" name="type" id="ad_login">
+                    <label for="ad_login">Admin</label>
+                    <input type="radio" name="type" id="std_login">
+                    <label for="std_login">Student</label>-->
+                    <select name="type" id="type_login">
+                        <option value="admin">Admin</option>
+                        <option value="student">Student</option>
+                    </select>
+                    <br>
+                    <input type="text" name="username" id="username" placeholder="Username">
+                    <br>
+                    <input type="password" name="password" id="password" placeholder="Password">
+                    <br>
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+        </div>
+        <div class="ad_logged">
+            <div class="ad_navbar">
+                <div class="ad_profile">
+                    <img src="assets/user.png" alt="Profile Icon" class="pfp">
+                    <h3 id="ad_user">username</h3>
+                    <p>Logged in as: <b>admin</b></p>
+                </div>
+                <div class="ad_books_div" onclick="Books_admin()">
+                    <p>Books</p>
+                </div>
+                <div class="ad_students_div" onclick="Students()">
+                    <p>Students</p>
+                </div>
+                <div class="ad_log_out" onclick="LogOut()">
+                    <img src="assets/exit.png" alt="Log Out" class="log_out_i">
+                    <p>Log Out</p>
+                </div>
+            </div>
+            <div class="ad_content">
+                <div id="ad_books">
+                    Books
+                </div>
+                <div id="ad_students">
+                    Students
+                </div>
+            </div>
+        </div>
+        <div class="std_logged">
+            <div class="ad_navbar">
+                <div class="std_profile">
+                    <img src="assets/user.png" alt="Profile Icon" class="pfp">
+                    <h3 id="std_user">username</h3>
+                    <p>Logged in as: <b>student</b></p>
+                </div>
+                <div class="std_books_div" onclick="Books_std()">
+                    <p>Books</p>
+                </div>
+                <div class="std_log_out" onclick="LogOut()">
+                    <img src="assets/exit.png" alt="Log Out" class="log_out_i">
+                    <p>Log Out</p>
+                </div>
+            </div>
+            <div class="std_content">
+                <div id="std_books">
+                    <table id="#std_table">
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Release Date</th>
+                            <th>Price</th>
+                            <th>Quantity Available</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
