@@ -42,19 +42,19 @@ namespace LibraryManager.Interface
         {
             string line = "99999999";
             StreamReader sr = new StreamReader("Data/books.txt");
-            while(int.Parse(line) != id)
+            while(int.Parse(line.Substring(0,1)) != id)
             {
                 line = sr.ReadLine();
             }
-            if (int.Parse(line.Substring(-1)) <= 0)
+            if (int.Parse(line.Substring(line.LastIndexOf("|")+1)) == 0)
             {
-                Console.WriteLine("Please try later, the book is not available now!");
+                Console.WriteLine("Please try again later, the book is not available now!");
                 BookLoad();
             }
             else
             {
                 string[] book = line.Split("|");
-
+                Console.WriteLine("ISSUING - future feature");
             }
         }
 
