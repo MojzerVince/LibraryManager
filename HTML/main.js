@@ -1,3 +1,56 @@
+const bookList = [
+    {
+        id: 0,
+        title: "Harry Potter és a bölcsek ostora",
+        author: "J.K. Rownling",
+        rl_date: "1999",
+        price: 3000,
+        quant_avail: 3,
+    },
+    {
+        id: 1,
+        title: "Harry Potter és a Cigók panorámája",
+        author: "J.K. Rownling",
+        rl_date: "2000",
+        price: 3500,
+        quant_avail: 5,
+    },
+    {
+        id: 2,
+        title: "Harry Potter és a félvér niga",
+        author: "J.K. Rownling",
+        rl_date: "2002",
+        price: 5000,
+        quant_avail: 2,
+    },
+    {
+        id: 3,
+        title: "Harry Potter és a nigák erekjéi",
+        author: "J.K. Rownling",
+        rl_date: "2003",
+        price: 5000,
+        quant_avail: 1,
+    },
+    {
+        id: 4,
+        title: "Harry Potter és a tűznigák",
+        author: "J.K. Rownling",
+        rl_date: "2001",
+        price: 4000,
+        quant_avail: 5,
+    },
+    {
+        id: 5,
+        title: "Harry Potter és a gyapotföldi fogoly",
+        author: "J.K. Rownling",
+        rl_date: "2000",
+        price: 4500,
+        quant_avail: 3,
+    },
+];
+console.table(bookList);
+
+
 const form = document.querySelector("#login_form");
 let loginClass = document.querySelector(".login");
 let admin = document.querySelector(".ad_logged");
