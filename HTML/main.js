@@ -48,7 +48,6 @@ const bookList = [
         quant_avail: 3,
     },
 ];
-console.table(bookList);
 
 
 const form = document.querySelector("#login_form");
@@ -99,9 +98,54 @@ function Students() {
 function Books_std() {
     let std_books = document.querySelector("#std_books");
     std_books.style = "display: block;";
+
+    //const table = document.querySelector("#std_table");
+
+    /*for(i = 0; i < bookList.length; i++){
+        const row = document.createElement("tr");
+        row.innerHTML = "ASD";
+        document.body.appendChild(row);
+        //console.log("ITEM: " + bookList[i].title);
+    }*/
+
+
+    // creates a <table> element and a <tbody> element
+    const table = document.createElement("table");
+    const tableBody = document.createElement("tbody");
+
+    // creating all cells
+    for (let i = 0; i < bookList.length; i++) {
+        // creates a table row
+        const row = document.createElement("tr");
+
+        const data1 = document.createElement("td");
+        data1.innerHTML = bookList[i].id;
+        row.appendChild(data1);
+        const data2 = document.createElement("td");
+        data2.innerHTML = bookList[i].title;
+        row.appendChild(data2);
+        const data3 = document.createElement("td");
+        data3.innerHTML = bookList[i].author;
+        row.appendChild(data3);
+        const data4 = document.createElement("td");
+        data4.innerHTML = bookList[i].rl_date;
+        row.appendChild(data4);
+        const data5 = document.createElement("td");
+        data5.innerHTML = bookList[i].price;
+        row.appendChild(data5);
+        const data6 = document.createElement("td");
+        data6.innerHTML = bookList[i].quant_avail;
+        row.appendChild(data6);
+
+        tableBody.appendChild(row);
+    }
+    table.appendChild(tableBody);
+
+    std_books.appendChild(table);
 }
 
-function LogOut(){
+
+function LogOut() {
     loginClass.style = "display: block;";
     admin.style = "display: none;";
     student.style = "display: none;";
