@@ -44,11 +44,22 @@ namespace LibraryManager
                 case ConsoleKey.D1:
                     BookList();
                     break;
+                case ConsoleKey.NumPad2:
+                case ConsoleKey.D2:
+                    StudentList();
+                    break;
                 default:
                     Console.Clear();
                     DashBoard();
                     break;
             }
+        }
+
+        private void StudentList()
+        {
+            Console.Clear();
+            Console.WriteLine("Student List");
+            StudentLoad();
         }
 
         private void BookList()

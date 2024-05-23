@@ -8,6 +8,11 @@ namespace LibraryManager.Interface
 {
     internal class IStudentHandler
     {
+        static List<Student> students = new List<Student>();
 
+        public void StudentLoad()
+        {
+
+        }
     }
 }

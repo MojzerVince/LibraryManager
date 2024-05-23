@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManager.Interface
 {
-    internal class IBookHandler
+    internal class IBookHandler : IStudentHandler
     {
         static List<Book> books = new List<Book>();
 
