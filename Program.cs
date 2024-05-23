@@ -87,6 +87,13 @@ namespace LibraryManager
                     }
                     break; //ha megtalálta, akkorne fusson tovább feleslegesen
                 }
+                else
+                {
+                    Console.WriteLine("Wrong username or password! Please try again!");
+                    Thread.Sleep(2000);
+                    if (type == "admin") AdminLogin();
+                    else if(type == "student") StudentLogin(std);
+                }
                 n++;
             }
             sr.Close();
