@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManager
 {
-    internal class Student : IBookHandler
+    internal class Student : Book
     {
         private int std_id;
         private string std_name;

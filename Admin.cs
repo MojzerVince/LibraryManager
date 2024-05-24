@@ -7,7 +7,7 @@ using LibraryManager.Interface;
 
 namespace LibraryManager
 {
-    internal class Admin : IBookHandler
+    internal class Admin : Book
     {
         private string username;
         private string password;
@@ -59,7 +59,7 @@ namespace LibraryManager
         {
             Console.Clear();
             Console.WriteLine("Student List");
-            StudentLoad();
+            //StudentLoad();
         }
 
         private void BookList()
